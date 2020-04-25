@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springbootdemo.mapper.UserMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.springbootdemo.dto.FacBuyer">
+        <result column="id" jdbcType="BIGINT" property="id" />
+        <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="token" jdbcType="VARCHAR" property="token" />
+        <result column="open_id" jdbcType="VARCHAR" property="openId" />
+        <result column="gender" jdbcType="VARCHAR" property="gender" />
+        <result column="avatarUrl" jdbcType="VARCHAR" property="avatarurl" />
+        <result column="balance" jdbcType="DECIMAL" property="balance" />
+        <result column="points" jdbcType="SMALLINT" property="points" />
+        <result column="registry_time" jdbcType="TIMESTAMP" property="registryTime" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+        <result column="operator_id" jdbcType="BIGINT" property="operatorId" />
+        <result column="operator_name" jdbcType="VARCHAR" property="operatorName" />
+        <result column="is_deleted" jdbcType="BIT" property="isDeleted" />
+    </resultMap>
+
+    <!--id对应UserDAO接口方法名-->
+    <!--parameterType对应参数类型-->
+    <!--resultType对应返回值类型-->
+    <!--注意sql语句字段和数据库对应-->
+    <select id="selectBuyers" resultType="com.example.springbootdemo.dto.FacBuyer">
+        SELECT * FROM fac_buyer
+    </select>
+</mapper>

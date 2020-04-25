@@ -1,0 +1,21 @@
+server:
+  port: 80
+  servlet:
+    context-path:
+
+spring:
+  # 配置文件选择(dev，pro)
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ry-pin?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+  profiles:
+    active: @profileActive@
+
+mybatis:
+  #  mapper文件
+  mapper-locations: mapper/*/*Mapper.xml
+  #  实体类
+  type-aliases-package: com.example.springbootdemo.dto
